@@ -30,5 +30,16 @@ beta2 = 0.99 # make a bit bigger because number of tokens per iter is small
 
 warmup_iters = 100 # not super necessary potentially
 
-# on macbook, use train_shakespeare_char_cpu.py instead
-compile = False
+# overrides for CPU
+device = 'cpu'  # run on cpu only
+compile = False # do not torch compile the model
+eval_iters = 20
+log_interval=1
+block_size=64
+batch_size=12
+n_layer=4
+n_head=4
+n_embd=128
+max_iters=2000
+lr_decay_iters=2000
+dropout=0.0
